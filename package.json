@@ -1,8 +1,12 @@
 {
   "name": "pixelshrink",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "Desktop image compression app",
   "main": "main.js",
+  "author": {
+    "name": "Ahmed Othman",
+    "email": "ahmed.othman.ghazzawi@gmail.com"
+  },
   "scripts": {
     "start": "concurrently \"npm run react-start\" \"npm run electron-start\"",
     "react-start": "react-scripts start",

@@ -7,7 +7,11 @@ function createWindow() {
   const mainWindow = new BrowserWindow({
     width: 1200,
     height: 800,
-    icon: path.join(__dirname, 'public', process.platform === 'win32' ? 'icon.ico' : 'icon.png'),
+    icon: path.join(
+      __dirname,
+      'public',
+      process.platform === 'win32' ? 'icon.ico' : 'icon.png'
+    ),
     webPreferences: {
       nodeIntegration: true,
       contextIsolation: false,
@@ -15,14 +19,10 @@ function createWindow() {
   });
 
   mainWindow.loadURL(
-    app.isPackaged
-      ? `file://${path.join(__dirname, '../build/index.html')}`
+    false
+      ? `file://${path.join(__dirname, './build/index.html')}`
       : 'http://localhost:3000'
   );
-
-  // if (!app.isPackaged) {
-  //   mainWindow.webContents.openDevTools();
-  // }
 }
 
 app.whenReady().then(createWindow);
